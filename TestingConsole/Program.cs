@@ -1,5 +1,4 @@
-﻿using RestSharp;
-using System;
+﻿using System;
 using TrainWatch.Services;
 
 namespace TestingConsole
@@ -9,7 +8,7 @@ namespace TestingConsole
         private static void Main(string[] args)
         {
             var sjservice = new SJApiService();
-            sjservice.GetResponsByTrainStation(DateTime.Now, "CST").Wait();
+            var res = sjservice.GetAllTrainStationInformations().Result;
         }
     }
 }
